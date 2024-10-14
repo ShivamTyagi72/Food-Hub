@@ -1,29 +1,58 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-//React.createElement=> object =>HTMLElement(render)
-// const heading = React.createElement("h1", { id: "heading" }, "Shivam Tyagi 🚀");
-//JSX
-const elem = <span>react element</span>;
+const Header = () => {
+  return (
+    <>
+      <div className="header">
+        <div className="Logo-container">
+          <img
+            className="Logo"
+            src="https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png"
+          />
+        </div>
+        <div className="navitems">
+          <ul>
+            <li>Home</li>
+            <li>About Us</li>
+            <li>Contact Us</li>
+            <li>Cart</li>
+          </ul>
+        </div>
+      </div>
+    </>
+  );
+};
 
-const Heading = () => (
-  <h1 className="head" tabIndex="1">
-    {elem} Namaste From Shivam 🚀
-  </h1>
-);
-const number = 1000;
+const RestaurantCard = () => {
+  return (
+    <div className="res-card">
+      <h3>Meghana foods</h3>
+    </div>
+  );
+};
 
-const HeadingComponent = () => (
-  <div>
-    <Heading />
-    <Heading />
-    <Heading />
-    <Heading />
-    <h1>{number}</h1>
+const Body = () => {
+  return (
+    <div className="body">
+      <div className="search">Search</div>
+      <div className="res-container">
+        <RestaurantCard />
+      </div>
+    </div>
+  );
+};
 
-    <h1 id="heading">Hlo from functional component 🚀</h1>
-  </div>
-);
+const AppLayout = () => {
+  return (
+    <>
+      <div className="app">
+        <Header />
+        <Body />
+      </div>
+    </>
+  );
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<HeadingComponent />);
+root.render(<AppLayout />);
